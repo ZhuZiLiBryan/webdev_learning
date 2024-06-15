@@ -1,0 +1,33 @@
+div {
+    width: 200px;
+    height: 200px;
+}
+
+h1 {
+    background-color: pink;
+    width: 200px;
+}
+#one {
+    background-color: #E0EEC6;
+    /* pixels usually used for border-width since they're small*/
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+#two {
+    background-color: #C2A83E;
+    border-color: #5d4b02;
+    border-width: 3px;
+    border-style: dashed;
+    border-left-width: 8px;
+}
+
+#three {
+    background-color: #7CA982;
+    /* common practice to set all properties at once with "border" then modify 
+    more specifically later */
+    border: 4px solid black;
+    border-radius: 50%; /*common way to get circles */
+}
