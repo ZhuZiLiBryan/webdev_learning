@@ -35,3 +35,16 @@ p a:hover {
 p:nth-of-type(2n + 1) {
     background-color: beige;
 }
+
+h2::first-letter {
+    font-size: 30px;
+    color:blueviolet;
+}
+
+p::first-line {
+    color: purple;
+}
+
+p::selection {
+    background-color: yellow;
+}
