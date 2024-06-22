@@ -42,8 +42,17 @@ h1 {
 }
 
 button {
+    font-size: 40px;
+    width: 200px;
+    height: 100px;
     padding: 0 20px;
     display: block;
+    border-radius: 20em;
+}
+
+button:hover {
+    background-color: red;
+    color: white;
 }
 
 .blocks {
