@@ -5,3 +5,8 @@ const gameboard = [
 ];
 
 console.log(gameboard[1][1]);
+
+const person = {
+    firstName: 'Bob',
+    lastName: 'Jones'
+};
