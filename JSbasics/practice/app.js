@@ -1,12 +1,6 @@
-const gameboard = [
-    ['X', 'O', 'X'],
-    ['O', null, 'X'],
-    ['O', null, 'X']
-];
+function makeBetweenFunc(min, max) {
+    return function(num) {
+        return num >= min && num <= max;
+    }
+}
 
-console.log(gameboard[1][1]);
-
-const person = {
-    firstName: 'Bob',
-    lastName: 'Jones'
-};
