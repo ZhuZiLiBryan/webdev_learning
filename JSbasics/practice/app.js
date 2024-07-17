@@ -4,3 +4,12 @@ function makeBetweenFunc(min, max) {
     }
 }
 
+const myMath = {
+    PI: 3.14159,
+    square(num) {
+        return num**num;
+    },
+    add(a, b) {
+        return a + b;
+    }
+}
