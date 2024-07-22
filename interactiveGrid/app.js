@@ -19,16 +19,20 @@ function makeRandomColor() {
     return colorString;
 }
 
-const pixel = document.querySelectorAll('.square');
+const pixels = document.querySelectorAll('.square');
 
-for (let p of pixel) {
-    p.addEventListener('mouseenter', () => {
+for (let p of pixels) {
+    p.addEventListener('mouseenter', function () {
         p.style.transition = 0.1;
-        p.style.backgroundColor = makeRandomColor();
+        this.style.backgroundColor = makeRandomColor();
         p.classList.toggle('bubble');
-    })
+    });
     p.addEventListener('mouseleave', () => {
         p.style.transition = 10;
         p.style.backgroundColor = 'white';
-    })
+    });
+
+    p.addEventListener('click', (evt) => {
+        console.log(evt);   
+    });
 }
