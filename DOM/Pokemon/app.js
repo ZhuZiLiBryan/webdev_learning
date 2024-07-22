@@ -16,3 +16,26 @@ for (let i = 1; i <= 151; i++) {
     entry.append(label);
     container.append(entry);
 }
+
+const pokemon = document.querySelectorAll('img')
+const button = document.querySelector('button')
+
+button.onclick = () => {
+    for (let p of pokemon) {
+        p.src = `https://i.pinimg.com/736x/c0/4b/2d/c04b2d263db517944f70b5055b70885e.jpg`
+    }
+}
+
+const bulba = document.querySelector('img');
+bulba.addEventListener('dblclick', () => {
+    bulba.src = `https://i.pinimg.com/736x/c0/4b/2d/c04b2d263db517944f70b5055b70885e.jpg`
+})
+
+bulba.nextElementSibling.addEventListener('mouseup', () => {
+    alert('FSJLD:F');
+})
+
+bulba.addEventListener('click', () => {
+    alert("pressed!");
+}, { once : true });
+
