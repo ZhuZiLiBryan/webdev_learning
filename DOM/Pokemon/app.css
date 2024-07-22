@@ -2,6 +2,7 @@
     display: inline-block;
     text-align: center;
 }
-.pokemon img {
+/* created CSS classes so that js file can add to CSS class list */
+.pokemon img  { 
     display: block;
 }
