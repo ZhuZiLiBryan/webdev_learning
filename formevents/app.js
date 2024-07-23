@@ -1,12 +1,20 @@
 const gameForm = document.querySelector('#gameForm');
-const input = document.querySelector('#gameinput');
-const list = document.querySelector('#games');
+const usernameInput = gameForm.elements.username;
+const gameInput = gameForm.elements.game;
 
-gameForm.addEventListener('submit', function(e) {
-    e.preventDefault(); //commonly used for submit form!
-    const gameName = input.value; // input.value allows us to access the values that were in input
-    const newListItem = document.createElement('li');
-    newListItem.innerText = gameName;
-    list.append(newListItem);
-    input.value = '';
+gameForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const usernameInput = gameForm.elements.username;
+    const gameInput = gameForm.elements.game;
+
+    const newEntry = document.createElement('li');
+    const bTag = document.createElement('b');
+    bTag.append(usernameInput.value);
+    newEntry.append(bTag);
+    newEntry.append(` -> ${gameInput.value}`);
+
+    document.querySelector('ul').append(newEntry);
+
+    usernameInput.value = "";
+    gameInput.value = "";
 });
