@@ -1,0 +1,9 @@
+.win {
+    color: greenyellow;
+    transition-duration: 1s;
+}
+
+.lose {
+    color: red;
+    transition-duration: 1s;
+}
