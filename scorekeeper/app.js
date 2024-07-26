@@ -1,7 +1,15 @@
-const p1Button = document.querySelector('#p1Button');
-const p2Button = document.querySelector('#p2Button');
-const p1Display = document.querySelector('#p1Score');
-const p2Display = document.querySelector('#p2Score');   
+const p1 = {
+    score: 0,
+    button: document.querySelector('#p1Button'),
+    display: document.querySelector('#p1Score'),
+}
+
+const p2 = {
+    score: 0,
+    button: document.querySelector('#p2Button'),
+    display: document.querySelector('#p2Score')
+}
+
 
 const playToSelect = document.querySelector('#playto');
 
@@ -10,45 +18,43 @@ const reset = document.querySelector('#reset');
 let p1Score = 0;
 let p2Score = 0;
 
-let winningScore = 5;
+let winningScore = 3;
 let isGameOver = false;
 
-function updateScores() {
-    p1Display.innerText = p1Score;
-    p2Display.innerText = p2Score;
+// Passing in the object!
+function updateScores(player, opponent) {
+    if (!isGameOver) {
+        player.score++;
+        if (player.score === winningScore) {
+            isGameOver = true;
+            player.display.classList.add('win');
+            opponent.display.classList.add('lose');
+            player.button.disabled = true;
+            opponent.button.disabled = true;
+        }
+        player.display.textContent = player.score;
+    }
 }
 
-p1Button.addEventListener('click', function (e) {
-    if (!isGameOver) {
-        p1Score++;
-        if (p1Score === winningScore) {
-            isGameOver = true;
-            p1Display.classList.add('win');
-            p2Display.classList.add('lose');
-        }
-        updateScores();
-    }
+
+p1.button.addEventListener('click', function (e) {
+    updateScores(p1, p2);
 });
 
-p2Button.addEventListener('click', function (e) {
-    if (!isGameOver) {
-        p2Score++;
-        if (p2Score === winningScore) {
-            isGameOver = true;
-            p2Display.classList.add('win');
-            p1Display.classList.add('lose');
-        }
-        updateScores();
-    }
+p2.button.addEventListener('click', function (e) {
+    updateScores(p2, p1);
 });
 
 function resetVals() {
-    p1Score = 0;
-    p2Score = 0;
-    updateScores();
+    for (let p of [p1, p2]) {
+        p.score = 0;
+        p.display.textContent = 0;
+        p.display.classList.remove('win', 'lose');
+        p.button.disabled = false;
+    }
+    
     isGameOver = false;
-    p1Display.classList.remove('win', 'lose');
-    p2Display.classList.remove('win', 'lose');
+    
 }
 
 reset.addEventListener('click', resetVals);
