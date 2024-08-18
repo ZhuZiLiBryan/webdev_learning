@@ -8,4 +8,4 @@ figlet('Hello World', function(err, data) {
         return;
     }
     console.log(data.green);
-})
+});
