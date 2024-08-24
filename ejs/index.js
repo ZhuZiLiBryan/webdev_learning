@@ -13,6 +13,12 @@ app.get('/r/:subreddit', (req, res) => {
     res.render('subreddit', { subreddit });
 });
 
+app.get('/cats', (req, res) => {
+    const cats = [ 'Mittens', 'Fluffles', 'Garfield', 'Rocket' ];
+
+    res.render('cats', { cats });
+});
+
 app.get('/rand', (req, res) => {
     const num = Math.random() * 10 + 1;
     res.render('random', { num : num }); // can pass in second argument to render, object w/ key value pairs to use in .ejs file
