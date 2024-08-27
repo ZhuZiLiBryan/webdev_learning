@@ -13,6 +13,11 @@ app.post('/tacos', (req, res) => {
     res.send(`${meat} taco is spicy? ${spicy} indeed, with a ${shell} shell!`);
 })
 
+app.get('/tacos/:meat', (req, res) => {
+    const { meat } = req.params;
+    res.send(`${meat} tacos are delicious!`);
+});
+
 app.listen(3000, () => {
     console.log("Listening on port 3000");
 })
